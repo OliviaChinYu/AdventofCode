@@ -41,7 +41,6 @@ def part_one():
 	return lights
 
 def part_two():
-	# print(df)
 	for line in f:
 		instruc = line.replace(' ',',')
 		instruc = instruc.replace('\n','')
@@ -58,7 +57,6 @@ def part_two():
 			df.loc[row_start:row_end, col_start:col_end] = df.loc[row_start:row_end, col_start:col_end] + 2
 		else:
 			pass
-		# print(df)
 	lights = df.values.sum()
 	return lights
 
