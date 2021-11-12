@@ -1,14 +1,18 @@
 import time
 
 partone = 'hxbxwxba'
-sample_input = 'hxbbcczz'
+# sample_input = 'hxbbcczx'
+sample_input = 'hxbxxyyy'
 parttwo = 'hxbxxyzz'
 
 
-input_list = list(parttwo)
+input_list = list(partone)
 idx = len(input_list)-1
+# global cond1
 cond1 = False
+# global cond2
 cond2 = True
+# global cond3
 cond3 = False
 
 def letter_inc(idx):
@@ -79,6 +83,7 @@ def all_conditions(input_list):
 			letter = i
 			dbl_count = 1
 		if dbl_count == 2: dbl_list.append(letter)
+		if i in ['i','o', 'l']: cond2 = False
 	if len(dbl_list) > 1: cond3 = True
 	return cond1, cond2, cond3
 
@@ -86,13 +91,10 @@ def all_conditions(input_list):
 
 start_time = time.time()
 while (cond1 and cond2 and cond3) is False:			# Looking for 3 True conditions to break While loop
-# for i in range(28):
 	letter_inc(idx)
-	# print(input_list, cond1, cond2, cond3)
 	# cond1 = condition_1(input_list)
 	# cond2 = condition_2(input_list)
 	# cond3 = condition_3(input_list)
-	# cond1, cond2, cond3 = all_conditions(input_list)
 	cond1, cond2, cond3 = all_conditions(input_list)
 
 
